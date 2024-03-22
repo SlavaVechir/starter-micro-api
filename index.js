@@ -1,6 +1,12 @@
-var http = require('http');
-http.createServer(function (req, res) {
-    console.log(`Just got a request at ${req.url}!`)
-    res.write('Yo!');
-    res.end();
-}).listen(process.env.PORT || 3000);
+// Backend code (server.js)
+const express = require('express');
+const app = express();
+
+app.get('/run-function', (req, res) => {
+    // Call your function here
+    res.send('Function executed successfully!');
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
